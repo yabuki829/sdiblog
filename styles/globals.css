@@ -1,26 +1,28 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+code {
+  width: 100%;
+  display: inline-block;
+  
+  padding: 0.1em 0.25em;
+  font-size: .8rem;
+  margin: 1.5rem 0;
+  padding: 1.5rem 0.5rem;
+  background-color: black;
+  color: white;
+
+  border-radius: 3px; 
+  border: solid 1px #d6dde4; /* 枠線 */
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+@keyframes typing {
+  to { width: 30ch; } /* この値は実際には使用されませんが、アニメーションの定義として残しておきます */
 }
 
-* {
-  box-sizing: border-box;
-}
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
+@keyframes blink-caret {
+  from, to { border-color: transparent; }
+  50% { border-color: white; }
 }
