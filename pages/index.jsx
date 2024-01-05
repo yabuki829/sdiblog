@@ -27,7 +27,7 @@ export default function Home({blogs,tags}) {
       <Header/>
       <div className="w-full bg-blue-900 p-4"> 
         <h1 className="text-white bg-black mx-2 p-2 "> 
-          <TypingText text={"blogs = Blog.object.all()"} spped={40}/>
+          <TypingText text={"Blog.object.all()"} spped={40}/>
         </h1>
       </div>
       <div className="flex flex-col md:flex-row ">
@@ -61,7 +61,7 @@ export default function Home({blogs,tags}) {
         </div>
       </div>
       <footer className="bottom-0">
-        <h1>category</h1>
+      
       </footer>
     </div>
   )
