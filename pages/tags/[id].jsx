@@ -48,9 +48,9 @@ export default function Home({blogs,tags,category_id}) {
     <div>
       <Header />
       <div className="w-full bg-blue-900 p-4"> 
-        <h1 className="text-white bg-black mx-2 p-2 "> 
+        <p className="text-white bg-black mx-2 p-2 text-sm  "> 
           <TypingText text={"Blog.object.filter(category="+`${category_id})`} spped={60}/>
-        </h1>
+        </p>
       </div>
       <div className="flex flex-col md:flex-row ">
 

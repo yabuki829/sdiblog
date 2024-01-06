@@ -33,14 +33,14 @@ export default function Blog({ postData }) {
     <div className="bg-gray-100 min-h-screen styles.heading">
       <Header/>
       <div className="w-full bg-blue-900 p-4"> 
-        <h1 className="text-white bg-black mx-2 p-2 "> 
+        <p className="text-white bg-black mx-2 p-2"> 
        
-          <TypingText text={` Blog.object.get(id=${postData.id})`} spped={100}/>
-        </h1>
+          <TypingText  text={` Blog.object.get(id=${postData.id})`} spped={100}/>
+        </p>
       </div>
       <div className="bg-white w-11/12 md:w-2/3 mx-auto p-8 my-12 rounded-3xl ">
         
-        <h1 className="text-xl md:text-4xl font-bold ">{postData.title}</h1>
+        <h1 className="md:text-4xl font-bold ">{postData.title}</h1>
         <div className="border-b-4 w-16 border-black rounded"></div>
         <p className="text-right"><Moment format="YYYY年MM月DD日HH:mm">{postData.createdAt}</Moment></p>
         <div className="mx-3" dangerouslySetInnerHTML={{__html :postData.body}}/>
