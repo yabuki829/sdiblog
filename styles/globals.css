@@ -6,23 +6,26 @@
 code {
   width: 100%;
   display: inline-block;
-  
-  padding: 0.1em 0.25em;
-  font-size: .8rem;
+  font-size: 0.8rem;
   margin: 1.5rem 0;
-  padding: 1.5rem 0.5rem;
+  padding: 1.5rem 0.5rem; /* 統合されたpadding */
   background-color: black;
   color: white;
-
   border-radius: 3px; 
-  border: solid 1px #d6dde4; /* 枠線 */
+  border: solid 1px #d6dde4; 
 }
 
-@keyframes typing {
-  to { width: 30ch; } /* この値は実際には使用されませんが、アニメーションの定義として残しておきます */
+hr {
+  margin: 10px;
+  padding: 10px;
 }
 
-@keyframes blink-caret {
-  from, to { border-color: transparent; }
-  50% { border-color: white; }
+h1 {
+  font-weight: bold;
+  font-size: 30px;
+}
+
+figure {
+  margin: 10px;
+  padding: 10px;
 }

@@ -6,11 +6,12 @@ import Header from "../components/Header";
 import { client } from "../libs/client";
 import { SideBar } from "../components/SideBar";
 import TypingText from '../components/TypeingText'
+
+
 export async function getStaticProps(){
  const data = await client.get({endpoint:"blog"})
  const data_2 = await client.get({endpoint:"category"})
- console.log(data)
- console.log(data_2)
+
  return {
   props: {
     blogs:data.contents,
@@ -40,9 +41,10 @@ export default function Home({blogs,tags}) {
               <div key={blog.id} className="flex flex-col w-full md:w-1/2 p-2 md:hover:scale-105  hover:shadow-black">
                 <Link href={`blog/${blog.id}`} className="border rounded-lg p-4 shadow-lg ">
                  
-                    <h1 className="text-xl font-bold">{blog.title}</h1>
-                    <img  src={ `${blog.thumbnail.url}` } className=" rounded-md w-full object-cover"/>
-                    <p className="bg-green-500 px-2 py-1 mt-2 rounded-full text-white inline-block">
+                    <h1 className="text-xl font-bold whitespace-nowrap truncate">{blog.title}</h1>
+                    <br />
+                    <img   src={ `${blog.thumbnail.url}` } className=" rounded-md w-full h-64  object-contain border"/>
+                    <p className="bg-green-500 px-2 py-1 mt-2 rounded-full text-white inline-block"> 
                       {blog.category.name}
                     </p>
                  

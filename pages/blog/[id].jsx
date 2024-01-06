@@ -1,4 +1,3 @@
-
 import Head from "next/head";
 import { client } from "../../libs/client";
 import Link from "next/link";
@@ -31,7 +30,7 @@ function DateString({ dateString }) {
 
 export default function Blog({ postData }) {
   return (
-    <div className="bg-gray-100 min-h-screen">
+    <div className="bg-gray-100 min-h-screen styles.heading">
       <Header/>
       <div className="w-full bg-blue-900 p-4"> 
         <h1 className="text-white bg-black mx-2 p-2 "> 
@@ -39,14 +38,14 @@ export default function Blog({ postData }) {
           <TypingText text={` Blog.object.get(id=${postData.id})`} spped={100}/>
         </h1>
       </div>
-      <div className="bg-white w-11/12 md:w-2/3 mx-auto p-8 my-12 rounded-3xl">
+      <div className="bg-white w-11/12 md:w-2/3 mx-auto p-8 my-12 rounded-3xl ">
         
-        <h1 className="text-xl md:text-4xl font-bold">{postData.title}</h1>
+        <h1 className="text-xl md:text-4xl font-bold ">{postData.title}</h1>
         <div className="border-b-4 w-16 border-black rounded"></div>
         <p className="text-right"><Moment format="YYYY年MM月DD日HH:mm">{postData.createdAt}</Moment></p>
         <div className="mx-3" dangerouslySetInnerHTML={{__html :postData.body}}/>
         <br />
-        <a href={`/tags/${postData.category.id}`} className="bg-green-500 px-2 py-1 rounded-full text-white">{postData.category.name}</a>
+        <a href={`/tags/${postData.category.id}`} className="bg-green-500 px-2 py-1 rounded-full text-white hover:bg-green-400">{postData.category.name}</a>
         
       </div>
 
@@ -54,6 +53,7 @@ export default function Blog({ postData }) {
       <div className="flex justify-center">
         <Link className='bg-gray-50 hover:bg-green-400 border-green-300 border-4 px-8 py-4 rounded-full ' href={"/"}>  <h1 className='text-xl font-bold'> <span></span> 一覧へ戻る</h1> </Link>
       </div>
+      <br />
       
     </div>
   );

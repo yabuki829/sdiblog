@@ -5,6 +5,7 @@ import Header from "../../components/Header";
 import Image from "next/image";
 import { client } from "../../libs/client";
 import TypingText from '../../components/TypeingText'
+import { SideBar } from "../../components/SideBar";
 
 export async function getStaticPaths() {
   const data = await client.get({ endpoint: "category" });
@@ -48,7 +49,7 @@ export default function Home({blogs,tags,category_id}) {
       <Header />
       <div className="w-full bg-blue-900 p-4"> 
         <h1 className="text-white bg-black mx-2 p-2 "> 
-          <TypingText text={"Blog.object.filter(category="+`${category_id})`} spped={40}/>
+          <TypingText text={"Blog.object.filter(category="+`${category_id})`} spped={60}/>
         </h1>
       </div>
       <div className="flex flex-col md:flex-row ">
@@ -60,7 +61,8 @@ export default function Home({blogs,tags,category_id}) {
               <div key={blog.id} className="flex flex-col w-full md:w-1/2 p-2 md:hover:scale-105  hover:shadow-black">
                 <Link href={`/blog/${blog.id}`} className="border rounded-lg p-4 shadow-lg ">
                  
-                    <h1 className="text-xl font-bold">{blog.title}</h1>
+                    <h1 className="text-xl font-bold whitespace-nowrap truncate">{blog.title}</h1>
+                    <br />
                     <img src={ `${blog.thumbnail.url}` } className=" rounded-md "/>
                     <p className="bg-green-500 px-2 py-1 mt-2 rounded-full text-white inline-block">
                       {blog.category.name}
@@ -74,23 +76,8 @@ export default function Home({blogs,tags,category_id}) {
         </div>
 
 
-
         <div className="w-full md:w-96 md:h-full "> 
-          <div className="bg-gray-200 p-4 md:m-4">
-            <h1 className="text-center bg-blue-400 text-white font-bold">プロフィール</h1>
-            <br />
-            <div className="h-32 relative">
-              <Image className="rounded-full" src={"/profile.jpg"} objectFit='contain' layout='fill'  ></Image>
-            </div>
-            <h1 className="text-center"> 藪木翔大</h1>
-          </div>
-          
-          <div className="bg-gray-200 p-4 md:m-4">
-            <h1 className="text-center bg-blue-400 text-white font-bold">タグ一覧</h1>
-            {tags.map((tag) => (
-              <a href={`/tags/${tag.id}`}  key={tag.id} className="bg-green-500 px-2 py-1 mt-2 mx-1 rounded-full text-white inline-block">{tag.name}</a>
-             ))}
-          </div>
+          <SideBar  tags={tags} />
         
         </div>
       </div>
