@@ -4,6 +4,7 @@ import Link from "next/link";
 import Header from "../../components/Header";
 import Moment from 'react-moment'
 import TypingText from '../../components/TypeingText'
+import Footer from "../../components/Footer";
 export async function getStaticPaths(){
     const data =  await client.get({endpoint:"blog"})
     const paths = data.contents.map((content) => `/blog/${content.id}`)
@@ -54,7 +55,7 @@ export default function Blog({ postData }) {
         <Link className='bg-gray-50 hover:bg-green-400 border-green-300 border-4 px-8 py-4 rounded-full ' href={"/"}>  <span className='text-xl font-bold'>  一覧へ戻る</span> </Link>
       </div>
       <br />
-      
+      <Footer/>
     </div>
   );
 }

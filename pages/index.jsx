@@ -6,6 +6,7 @@ import Header from "../components/Header";
 import { client } from "../libs/client";
 import { SideBar } from "../components/SideBar";
 import TypingText from '../components/TypeingText'
+import Footer from "../components/Footer";
 
 
 export async function getStaticProps(){
@@ -24,7 +25,7 @@ export async function getStaticProps(){
 export default function Home({blogs,tags}) {
 
   return (
-    <div>
+    <div className="flex flex-col min-h-screen">
       <Header/>
       <div className="w-full bg-blue-900 p-4"> 
         <p className="text-white bg-black mx-2 p-2 "> 
@@ -42,7 +43,7 @@ export default function Home({blogs,tags}) {
                 <Link href={`blog/${blog.id}`} className="border rounded-lg p-4 shadow-lg ">
                  
                     <h1 className="text-xl font-bold whitespace-nowrap truncate">{blog.title}</h1>
-                    <br />
+                    
                     <img   src={ `${blog.thumbnail.url}` } className=" rounded-md w-full h-64  object-contain border"/>
                     <p className="bg-green-500 px-2 py-1 mt-2 rounded-full text-white inline-block"> 
                       {blog.category.name}
@@ -62,9 +63,8 @@ export default function Home({blogs,tags}) {
         
         </div>
       </div>
-      <footer className="bottom-0">
-      
-      </footer>
+     
+      <Footer/>
     </div>
   )
 }
