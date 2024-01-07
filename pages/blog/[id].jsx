@@ -52,7 +52,7 @@ export default function Blog({ postData }) {
 
       <br /> 
       <div className="flex justify-center">
-        <Link className='bg-gray-50 hover:bg-green-400 border-green-300 border-4 px-8 py-4 rounded-full ' href={"/"}>  <span className='text-xl font-bold'>  一覧へ戻る</span> </Link>
+        <Link className='bg-gray-50 hover:text-gray-700 hover:bg-green-400 border-green-300 border-4 px-8 py-4 rounded-full ' href={"/"}>  <span className='text-xl font-bold'>  一覧へ戻る</span> </Link>
       </div>
       <br />
       <Footer/>
