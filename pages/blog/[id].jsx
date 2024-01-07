@@ -37,7 +37,7 @@ export default function Blog({ postData }) {
           <TypingText  text={` Blog.object.get(id=${postData.id})`} spped={100}/>
         </p>
       </div>
-      <div className="bg-white w-11/12 md:w-2/3 mx-auto p-4 md:p-8 my-12 rounded-3xl ">
+      <div className="bg-white w-11/12 md:w-2/3 mx-auto p-6 md:p-8 my-12 rounded-3xl ">
         
         <p className="text-xl md:text-4xl font-bold  ">{postData.title}</p>
        
