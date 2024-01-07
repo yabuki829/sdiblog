@@ -34,13 +34,13 @@ export default function Blog({ postData }) {
       <Header/>
       <div className="w-full bg-blue-900 p-4"> 
         <p className="text-white bg-black mx-2 p-2"> 
-       
           <TypingText  text={` Blog.object.get(id=${postData.id})`} spped={100}/>
         </p>
       </div>
-      <div className="bg-white w-11/12 md:w-2/3 mx-auto p-8 my-12 rounded-3xl ">
+      <div className="bg-white w-11/12 md:w-2/3 mx-auto p-4 md:p-8 my-12 rounded-3xl ">
         
-        <h1 className="md:text-4xl font-bold ">{postData.title}</h1>
+        <p className="text-xl md:text-4xl font-bold  ">{postData.title}</p>
+       
         <div className="border-b-4 w-16 border-black rounded"></div>
         <p className="text-right"><Moment format="YYYY年MM月DD日HH:mm">{postData.createdAt}</Moment></p>
         <div className="mx-3" dangerouslySetInnerHTML={{__html :postData.body}}/>
@@ -51,7 +51,7 @@ export default function Blog({ postData }) {
 
       <br /> 
       <div className="flex justify-center">
-        <Link className='bg-gray-50 hover:bg-green-400 border-green-300 border-4 px-8 py-4 rounded-full ' href={"/"}>  <h1 className='text-xl font-bold'> <span></span> 一覧へ戻る</h1> </Link>
+        <Link className='bg-gray-50 hover:bg-green-400 border-green-300 border-4 px-8 py-4 rounded-full ' href={"/"}>  <span className='text-xl font-bold'>  一覧へ戻る</span> </Link>
       </div>
       <br />
       
