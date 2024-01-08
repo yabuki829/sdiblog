@@ -6,6 +6,7 @@ import Image from "next/image";
 import { client } from "../../libs/client";
 import TypingText from '../../components/TypeingText'
 import { SideBar } from "../../components/SideBar";
+import Footer from "../../components/Footer";
 
 export async function getStaticPaths() {
   const data = await client.get({ endpoint: "category" });
@@ -45,7 +46,7 @@ export default function Home({blogs,tags,category_id}) {
   
 
   return (
-    <div>
+    <div className="flex flex-col min-h-screen">
       <Header />
       <div className="w-full bg-blue-900 p-4"> 
         <p className="text-white bg-black mx-2 p-2 text-sm  "> 
@@ -81,7 +82,7 @@ export default function Home({blogs,tags,category_id}) {
         
         </div>
       </div>
-   
+      <Footer/>
     </div>
   )
 }

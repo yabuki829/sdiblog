@@ -38,15 +38,17 @@ export default function Blog({ postData }) {
           <TypingText  text={` Blog.object.get(id=${postData.id})`} spped={100}/>
         </p>
       </div>
-      <div className="bg-white w-11/12 md:w-2/3 mx-auto p-6 md:p-8 my-12 rounded-3xl ">
+      <div className="bg-white md:w-2/3 mx-auto p-6 md:p-8 md:my-12 md:rounded-3xl ">
         
         <p className="text-xl md:text-4xl font-bold  ">{postData.title}</p>
        
         <div className="border-b-4 w-16 border-black rounded"></div>
+        <br />
+        <a href={`/tags/${postData.category.id}`} className="bg-green-500 px-2 py-1 rounded-full text-white hover:bg-green-400">{postData.category.name}</a>
         <p className="text-right"><Moment format="YYYY年MM月DD日HH:mm">{postData.createdAt}</Moment></p>
         <div className="mx-3" dangerouslySetInnerHTML={{__html :postData.body}}/>
         <br />
-        <a href={`/tags/${postData.category.id}`} className="bg-green-500 px-2 py-1 rounded-full text-white hover:bg-green-400">{postData.category.name}</a>
+       
         
       </div>
 
